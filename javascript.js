@@ -2,7 +2,6 @@ let humanScore = 0;
 let pooPooCaCaScore = 0;
 
 let hoomanChoice = prompt("Type 'Rock', 'Paper' or 'Scissors'");
-
 function getHumanChoice() {
   switch (hoomanChoice.toLowerCase().trim()) {
     case "rock":
@@ -15,7 +14,6 @@ function getHumanChoice() {
       alert("You didn't pick a valid option");
   }
 } // Hooman choice
-console.log("You played: " + getHumanChoice());
 
 function getComputerChoice() {
   switch (Math.floor(Math.random() * 3)) {
@@ -30,31 +28,36 @@ function getComputerChoice() {
   }
 } // Computer choice
 
-const computerChoice = getComputerChoice();
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice === computerChoice) {
+    console.log("You tied");
+  }
+  if (humanChoice === "Rock" && computerChoice === "Paper") {
+    pooPooCaCaScore++;
+  }
+  if (humanChoice === "Rock" && computerChoice === "Scissors") {
+    humanScore++;
+  }
+  if (humanChoice === "Paper" && computerChoice === "Scissors") {
+    pooPooCaCaScore++;
+  }
+  if (humanChoice === "Paper" && computerChoice === "Rock") {
+    humanScore++;
+  }
+  if (humanChoice === "Scissors" && computerChoice === "Rock") {
+    pooPooCaCaScore++;
+  }
+  if (humanChoice === "Scissors" && computerChoice === "Paper") {
+    humanScore++;
+  }
 
-console.log("PooPooCaCa played: " + computerChoice);
+  console.log("You played: " + humanChoice);
+  console.log("PooPooCaCa played: " + computerChoice);
+  console.log("Your score: " + humanScore);
+  console.log("PooPooCaCa score: " + pooPooCaCaScore);
+} // Play a round & score
 
-if (getHumanChoice() === computerChoice) {
-  console.log("You tied");
-}
-if (getHumanChoice() === "Rock" && computerChoice === "Paper") {
-  pooPooCaCaScore++;
-}
-if (getHumanChoice() === "Rock" && computerChoice === "Scissors") {
-  humanScore++;
-}
-if (getHumanChoice() === "Paper" && computerChoice === "Scissors") {
-  pooPooCaCaScore++;
-}
-if (getHumanChoice() === "Paper" && computerChoice === "Rock") {
-  humanScore++;
-}
-if (getHumanChoice() === "Scissors" && computerChoice === "Rock") {
-  pooPooCaCaScore++;
-}
-if (getHumanChoice() === "Scissors" && computerChoice === "Paper") {
-  humanScore++;
-}
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
-console.log("Your score: " + humanScore);
-console.log("PooPooCaCa score: " + pooPooCaCaScore);
+playRound(humanSelection, computerSelection);
