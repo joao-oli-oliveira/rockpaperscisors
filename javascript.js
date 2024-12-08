@@ -55,24 +55,6 @@ if (getHumanChoice() === "Scissors" && computerChoice === "Rock") {
 if (getHumanChoice() === "Scissors" && computerChoice === "Paper") {
   humanScore++;
 }
-if (computerChoice === "Rock" && getHumanChoice() === "Paper") {
-  humanScore++;
-}
-if (computerChoice === "Rock" && getHumanChoice() === "Scissors") {
-  pooPooCaCaScore++;
-}
-if (computerChoice === "Paper" && getHumanChoice() === "Scissors") {
-  humanScore++;
-}
-if (computerChoice === "Paper" && getHumanChoice() === "Rock") {
-  pooPooCaCaScore++;
-}
-if (computerChoice === "Scissors" && getHumanChoice() === "Rock") {
-  humanScore++;
-}
-if (computerChoice === "Scissors" && getHumanChoice() === "Paper") {
-  pooPooCaCaScore++;
-}
 
 console.log("Your score: " + humanScore);
 console.log("PooPooCaCa score: " + pooPooCaCaScore);

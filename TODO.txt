@@ -10,7 +10,6 @@ L   rock v paper
 W   rock v scissors
 L   paper v scissors
 
-
  if (getHumanChoice() === getComputerChoice()) {
   console.log("You tied");
 }
