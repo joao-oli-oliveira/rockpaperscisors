@@ -1,15 +1,6 @@
 
-`${getComputerChoice()}`
 
- poopoocaca vs hooman
 
-if hooman played
 
-T   a v a
-L   rock v paper 
-W   rock v scissors
-L   paper v scissors
-
- if (getHumanChoice() === getComputerChoice()) {
-  console.log("You tied");
-}
+round 
+prompt 

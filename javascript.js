@@ -1,8 +1,11 @@
 let humanScore = 0;
 let pooPooCaCaScore = 0;
 
-let hoomanChoice = prompt("Type 'Rock', 'Paper' or 'Scissors'");
 function getHumanChoice() {
+  let hoomanChoice = prompt(
+    "Type 'Rock', 'Paper' or 'Scissors'",
+    `${getComputerChoice()}`
+  );
   switch (hoomanChoice.toLowerCase().trim()) {
     case "rock":
       return "Rock";
@@ -53,11 +56,16 @@ function playRound(humanChoice, computerChoice) {
 
   console.log("You played: " + humanChoice);
   console.log("PooPooCaCa played: " + computerChoice);
-  console.log("Your score: " + humanScore);
-  console.log("PooPooCaCa score: " + pooPooCaCaScore);
 } // Play a round & score
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame() {
+  playRound(getHumanChoice(), getComputerChoice());
+  playRound(getHumanChoice(), getComputerChoice());
+  playRound(getHumanChoice(), getComputerChoice());
+  playRound(getHumanChoice(), getComputerChoice());
+  playRound(getHumanChoice(), getComputerChoice());
+  console.log("Your score: " + humanScore);
+  console.log("PooPooCaCa score: " + pooPooCaCaScore);
+}
 
-playRound(humanSelection, computerSelection);
+playGame();
