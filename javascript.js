@@ -1,7 +1,10 @@
 const rockButton = document.getElementById("rockBtn");
 const paperButton = document.getElementById("paperBtn");
 const scissorsButton = document.getElementById("scissorsBtn");
-const resultSection = document.getElementById("container");
+const humResultSection = document.getElementById("humRes");
+const compResultSection = document.getElementById("compRes");
+const humScore = document.getElementById("humScore");
+const compScore = document.getElementById("compScore");
 
 let humanScore = 0;
 let pooPooCaCaScore = 0;
@@ -10,12 +13,12 @@ rockButton.addEventListener("click", () => {
   playRound("Rock", getComputerChoice());
 });
 
-// paperButton.addEventListener("click", () => {
-//   alert("Hello World");
-// });
-// scissorsButton.addEventListener("click", () => {
-//   alert("Hello World");
-// });
+paperButton.addEventListener("click", () => {
+  playRound("Paper", getComputerChoice());
+});
+scissorsButton.addEventListener("click", () => {
+  playRound("Scissors", getComputerChoice());
+});
 
 function getComputerChoice() {
   switch (Math.floor(Math.random() * 3)) {
@@ -53,8 +56,10 @@ function playRound(humanChoice, computerChoice) {
     humanScore++;
   }
 
-  console.log("You played: " + humanChoice);
-  console.log("PooPooCaCa played: " + computerChoice);
+  humResultSection.textContent = "You played: " + humanChoice;
+  compResultSection.textContent = "PooPooCaCa played: " + computerChoice;
+  humScore.textContent = "Your score: " + humanScore;
+  compScore.textContent = "PooPooCaCa score: " + pooPooCaCaScore;
 } // Play a round & score
 
 // function getHumanChoice() {
